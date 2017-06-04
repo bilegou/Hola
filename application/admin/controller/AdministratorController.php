@@ -29,7 +29,7 @@ class AdministratorController extends AdminAuth
             'username' => array('type' => 'text', 'label' => '用户名'),
             'nickname' => array('type' => 'text', 'label' => '昵称'),
             'pwd' => array('type' => 'password', 'label' => '密码', 'notes' => '更新管理员资料默认不填写则不修改密码','create'=>''),
-            'avatar' => array('type' => 'file', 'label' => '头像','id'=>''),
+            'avatar' => array('type' => 'file', 'label' => '管理员头像','id'=>''),
             'status' => array('type' => 'radio', 'label' => '状态', 'default' => array(-1 => '删除', 0 => '禁用', 1 => '正常', 2 => '待审核'),'create'=>''),
         ];
         //默认值设置
@@ -68,7 +68,7 @@ class AdministratorController extends AdminAuth
             'username' => array('type' => 'text', 'label' => '用户名'),
             'nickname' => array('type' => 'text', 'label' => '昵称'),
             'pwd' => array('type' => 'password', 'label' => '密码', 'notes' => '更新管理员资料默认不填写则不修改密码','create'=>''),
-            'avatar' => array('type' => 'file', 'label' => '头像','id'=>''),
+            'avatar' => array('type' => 'file', 'label' => '管理员头像','id'=>''),
             'status' => array('type' => 'radio', 'label' => '状态', 'default' => array(-1 => '删除', 0 => '禁用', 1 => '正常', 2 => '待审核'),'create'=>''),
         ];
         //默认值设置
