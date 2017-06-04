@@ -1,0 +1,58 @@
+
+<body>
+　<div class="footer_content">
+    <div class="foot_content">
+       <h4>made by Lcs&nbsp<small>---2017-05-24</small></h4>
+        <h5>Thinks Bootsrap&ThinkPHP </h5>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    function deleteData(id){
+        $.ajax({
+            type:"POST",
+            url:"{:url('admin/administrator/delete')}",
+            data:{
+                id:id,
+            },
+            success:function(data){
+                    $('#reload'+data.id).remove();
+            }
+
+        });
+    }
+
+    function post_update($id){
+        $.ajax({
+            type:"POST",
+            url:"{:url('admin/administrator/update')}",
+            data:{
+                id:id,
+            }
+        })
+    }
+
+</script>
+
+<script>
+    $(".user_info").click(function(){
+        $(".username").toggle(500);
+    })
+
+</script>
+
+<script>
+    $(".administer").click(function(){
+        $("#admin").slideToggle(300);
+    });
+
+    $(".articles").click(function(){
+        $("#article").slideToggle(300);
+    });
+</script>
+
+<script>
+    $("#path").change(function () {
+        $("#docPath").val($(":file").val());
+    });
+</script>
