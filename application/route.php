@@ -17,15 +17,20 @@ return [
         ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
         ':name' => ['index/hello', ['method' => 'post']],
     ],
-    //admin_index↓
+    //login↓
     'admin/login/' => 'admin/index/login',
     'admin/login_action/' =>'admin/index/login_action',
     'admin/logout/'=>'admin/index/logout',
-
+   //admin_index
     'admin/administrator/update/:id' => 'admin/Administrator/update',
     'admin/administrator/:id' =>'admin/Administrator/read',
-
     'admin/administrator/add' =>'admin/Administrator/add',
     'admin/administrator/create' =>'admin/Administrator/create',
     'admin/administrator/delete'=>'admin/Administrator/delete',
+    //article_index
+    'admin/articles/update/:id'=>'admin/Articles/update',
+    'admin/articles/:id'=>'admin/Articles/read',
+    'admin/articles/add'=>'admin/Articles/add',
+    'admin/articles/create'=>'admin/Articles/create',
+    'admin/articles/delete'=>'admin/Articles/delete',
 ];

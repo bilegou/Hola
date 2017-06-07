@@ -5,7 +5,5 @@ use think\Model;
 class User extends Model
 {
     protected $insert = ['status' => 1];
-//    protected $autoWriteTimestamp = true;
-//    protected $createTime = true;
-//    protected $updateTime = true;
+    protected $autoWriteTimestamp = true;
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:67:"D:\myblog\public/../application/admin\view\administrator\index.html";i:1496553523;s:54:"D:\myblog\public/../application/admin\view\layout.html";i:1495507201;s:54:"D:\myblog\public/../application/admin\view\header.html";i:1496314293;s:52:"D:\myblog\public/../application/admin\view\left.html";i:1495697511;s:58:"D:\myblog\public/../application/admin\view\edit_field.html";i:1496560309;s:54:"D:\myblog\public/../application/admin\view\footer.html";i:1496388250;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:67:"D:\myblog\public/../application/admin\view\administrator\index.html";i:1496660600;s:54:"D:\myblog\public/../application/admin\view\layout.html";i:1495507201;s:54:"D:\myblog\public/../application/admin\view\header.html";i:1496314293;s:52:"D:\myblog\public/../application/admin\view\left.html";i:1496749847;s:58:"D:\myblog\public/../application/admin\view\edit_field.html";i:1496742266;s:54:"D:\myblog\public/../application/admin\view\footer.html";i:1496388250;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,21 +29,21 @@
 <body>
 <div class="global_left">
     <div class="title_left">
-        <div style="color:#00CCCC; font-size: 22px; text-align: center;line-height: 50px;border-bottom: 1px solid #EEEEEE;">Hola Blog <span style="font-size: 14px;color:#DDDDDD">&nbsp by Sen&Qian</span></div>
+        <a href="/admin/administrator" style="text-decoration: none"><div style="color:#00CCCC; font-size: 22px; text-align: center;line-height: 50px;border-bottom: 1px solid #EEEEEE;">Hola Blog <span style="font-size: 14px;color:#DDDDDD">&nbsp by &Sen</span></div></a>
     </div>
     <div class="nav_control">
         <div class="administer">
             <a href="#"><div class="adm_title" style="font-size: 18px">Administrator&nbsp&nbsp<div class="glyphicon glyphicon-chevron-down" id="plus_icon"></div></div></a>
             <ul id="admin">
-                <li><a href="#">Admin List</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#myModal">Add Admin</a></li>
+                <li><a href="#">管理员列表</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#userCreate">新增管理员</a></li>
             </ul>
         </div>
         <div class="articles">
             <a  href="#"><div class="art_title" style="font-size: 18px"> Articles Management&nbsp&nbsp<div class="glyphicon glyphicon-chevron-down"></div></div></a>
             <ul id="article">
-                <li><a href="#">Aticles List</a></li>
-                <li><a href="#">Add Article</a></li>
+                <li><a href="/admin/articles">文章管理列表</a></li>
+                <li><a href="/admin/articles/create">添加新文章</a></li>
             </ul>
         </div>
     </div>
@@ -77,8 +77,9 @@
             <td>最后登录时间</td>
             <td style="text-align: center">操作</td>
         </tr>
+
         <tbody>
-        <?php if(is_array($info) || $info instanceof \think\Collection || $info instanceof \think\Paginator): $i = 0; $__LIST__ = $info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$user): $mod = ($i % 2 );++$i;?>
+        <?php if(($list)): if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$user): $mod = ($i % 2 );++$i;?>
         <tr id="reload<?php echo $user['id']; ?>">
             <td><?php echo $user['id']; ?></td>
             <td><?php echo $user['nickname']; ?></td>
@@ -93,26 +94,12 @@
                 <a class="btn btn-danger" href="javascript:;"  onclick="if(confirm('确定要删除该管理员账号吗')){ deleteData(<?php echo $user->id; ?>)}">删除</a>
             </td>
         </tr>
-        <?php endforeach; endif; else: echo "" ;endif; ?>
+        <?php endforeach; endif; else: echo "" ;endif; endif; ?>
         </tbody>
     </table>
     </div>
-    <div class="page_control">
-    <nav aria-label="Page navigation">
-        <ul class="pagination">
-            <li>
-                <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li>
-                <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <div class="admin_pagination" style=" float: right" >
+    <div class="Page navigation"><?php echo $list->render(); ?></div>
     </div>
     <!--新建用户-->
     <div class="modal fade bs-example-modal-lg" id="userCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -141,11 +128,11 @@
         <input type="<?php echo $field['type']; ?>"
                <?php if(isset($field['id']) AND $field['id']): ?>id="<?php echo $field['id']; ?>"<?php endif; if(isset($field['disabled']) AND $field['disabled']): ?>disabled=$field['disabled']<?php endif; ?>
         class="form-control"
-        name="<?php echo $key; ?>" value="<?php if(isset($item[$key])): ?><?php echo $item[$key]; endif; ?>">
-
+        name="<?php echo $key; ?>" value="">
         <?php if(isset($field['create'])): ?>
         <?php echo $field['create']; else: ?>
-        <?php echo $field['notes']; endif; ?>
+        <p class="help-block"><?php echo $field['notes']; ?></p>
+        <?php endif; ?>
     </div>
     <?php break; case "file": if(isset($field['label']) AND $field['label']): ?><label><?php echo $field['label']; ?></label><?php endif; ?>
     <div class="form-group">
@@ -156,7 +143,6 @@
     </div>
     <?php if(isset($item[$key]) AND $item[$key]!=""): ?>
     <a href="__IMAGES__/<?php echo $item[$key]; ?>" target="_blank"><img src="__IMAGES__/<?php echo $item[$key]; ?>" class="img-responsive img-thumbnail"></a>
-    <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete</a>
     <?php endif; break; case "radio": ?>
     <div class="form-group">
             <?php if(isset($field['label'])): ?><label><?php echo $field['label']; ?></label><?php endif; ?>
@@ -171,6 +157,16 @@
             <?php endforeach; ?>
         </div>
         </div>
+    <?php break; case "textarea": ?>
+    <div class="form-group">
+        <?php if(isset($field['label'])): ?><label><?php echo $field['label']; ?></label><?php endif; ?>
+        <div class="">
+            <input type="<?php echo $field['type']; ?>" <?php if(isset($field['disable']) AND $field['disable']): ?>disable="disable"<?php endif; ?>
+            value="<?php if(isset($item[$key])): ?><?php echo $item[$key]; endif; ?>"
+            name="<?php echo $key; ?>">
+            <?php if(isset($field['notes']) AND $field['notes']): ?><p class="help-block"><?php echo $field['notes']; ?></p><?php endif; ?>
+        </div>
+    </div>
     <?php break; endswitch; endforeach; endif; else: echo "" ;endif; ?>
     </div>
                 <div class="modal-footer">

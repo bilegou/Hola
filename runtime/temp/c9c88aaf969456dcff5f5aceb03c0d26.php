@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:66:"D:\myblog\public/../application/admin\view\administrator\read.html";i:1496406025;s:54:"D:\myblog\public/../application/admin\view\layout.html";i:1495507201;s:54:"D:\myblog\public/../application/admin\view\header.html";i:1496314293;s:52:"D:\myblog\public/../application/admin\view\left.html";i:1495697511;s:58:"D:\myblog\public/../application/admin\view\edit_field.html";i:1496560309;s:54:"D:\myblog\public/../application/admin\view\footer.html";i:1496388250;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:66:"D:\myblog\public/../application/admin\view\administrator\read.html";i:1496406025;s:54:"D:\myblog\public/../application/admin\view\layout.html";i:1495507201;s:54:"D:\myblog\public/../application/admin\view\header.html";i:1496314293;s:52:"D:\myblog\public/../application/admin\view\left.html";i:1496665599;s:58:"D:\myblog\public/../application/admin\view\edit_field.html";i:1496672670;s:54:"D:\myblog\public/../application/admin\view\footer.html";i:1496388250;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +29,7 @@
 <body>
 <div class="global_left">
     <div class="title_left">
-        <div style="color:#00CCCC; font-size: 22px; text-align: center;line-height: 50px;border-bottom: 1px solid #EEEEEE;">Hola Blog <span style="font-size: 14px;color:#DDDDDD">&nbsp by Sen&Qian</span></div>
+        <a href="/admin/administrator" style="text-decoration: none"><div style="color:#00CCCC; font-size: 22px; text-align: center;line-height: 50px;border-bottom: 1px solid #EEEEEE;">Hola Blog <span style="font-size: 14px;color:#DDDDDD">&nbsp by Sen&Qian</span></div></a>
     </div>
     <div class="nav_control">
         <div class="administer">
@@ -80,11 +80,11 @@
         <input type="<?php echo $field['type']; ?>"
                <?php if(isset($field['id']) AND $field['id']): ?>id="<?php echo $field['id']; ?>"<?php endif; if(isset($field['disabled']) AND $field['disabled']): ?>disabled=$field['disabled']<?php endif; ?>
         class="form-control"
-        name="<?php echo $key; ?>" value="<?php if(isset($item[$key])): ?><?php echo $item[$key]; endif; ?>">
-
+        name="<?php echo $key; ?>" value="">
         <?php if(isset($field['create'])): ?>
         <?php echo $field['create']; else: ?>
-        <?php echo $field['notes']; endif; ?>
+        <p class="help-block"><?php echo $field['notes']; ?></p>
+        <?php endif; ?>
     </div>
     <?php break; case "file": if(isset($field['label']) AND $field['label']): ?><label><?php echo $field['label']; ?></label><?php endif; ?>
     <div class="form-group">
@@ -95,7 +95,6 @@
     </div>
     <?php if(isset($item[$key]) AND $item[$key]!=""): ?>
     <a href="__IMAGES__/<?php echo $item[$key]; ?>" target="_blank"><img src="__IMAGES__/<?php echo $item[$key]; ?>" class="img-responsive img-thumbnail"></a>
-    <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete</a>
     <?php endif; break; case "radio": ?>
     <div class="form-group">
             <?php if(isset($field['label'])): ?><label><?php echo $field['label']; ?></label><?php endif; ?>

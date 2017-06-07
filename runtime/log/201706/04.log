@@ -11059,3 +11059,890 @@
 [ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 29 LIMIT 1 [ RunTime:0.000603s ]
 
 ---------------------------------------------------------------
+[ 2017-06-04T23:34:01+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/login
+[ log ] myblog.io/admin/login [运行时间：0.470689s][吞吐率：2.12req/s] [内存消耗：1,530.23kb] [文件加载：48]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->login[ D:\myblog\application\admin\controller\IndexController.php ]
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-06-04T23:34:06+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/login_action
+[ log ] myblog.io/admin/login_action [运行时间：0.259641s][吞吐率：3.85req/s] [内存消耗：2,444.88kb] [文件加载：57]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login_action',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'content-length' => '24',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://myblog.io',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'pwd' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->login_action[ D:\myblog\application\admin\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\myblog\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003855s ] mysql:dbname=sblog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.010290s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = 'admin'  AND `pwd` = '21232f297a57a5a743894a0e4a801fc3' LIMIT 1 [ RunTime:0.000905s ]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:34:08+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ log ] myblog.io/admin [运行时间：0.095797s][吞吐率：10.44req/s] [内存消耗：1,575.60kb] [文件加载：48]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/login_action',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ D:\myblog\application\admin\controller\IndexController.php ]
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-06-04T23:34:09+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/administrator
+[ log ] myblog.io/admin/administrator [运行时间：0.086397s][吞吐率：11.57req/s] [内存消耗：2,632.87kb] [文件加载：60]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'administrator',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->index[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\administrator\index.html [ array (
+  0 => 'data',
+  1 => 'list',
+  2 => 'info',
+  3 => 'item',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011184s ] mysql:dbname=sblog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.007025s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` WHERE  `status` >= 0 LIMIT 1 [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` >= 0 ORDER BY `id`  ASC LIMIT 0,15 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` >= 0 [ RunTime:0.000365s ]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:34:12+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/administrator/8
+[ log ] myblog.io/admin/administrator/8 [运行时间：0.115712s][吞吐率：8.64req/s] [内存消耗：2,513.74kb] [文件加载：57]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Administrator',
+    2 => 'read',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+  'id' => '8',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->read[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\administrator\read.html [ array (
+  0 => 'item',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001336s ] mysql:dbname=sblog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.006094s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000431s ]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:34:20+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/administrator/update/8
+[ log ] myblog.io/admin/administrator/update/8 [运行时间：0.203094s][吞吐率：4.92req/s] [内存消耗：2,434.89kb] [文件加载：59]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Administrator',
+    2 => 'update',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'content-length' => '57080',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://myblog.io',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryil0sB1tfW4yVCBxS',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator/8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'wuqian',
+  'nickname' => '吴倩',
+  'pwd' => '21232f297a57a5a743894a0e4a801fc3',
+  'status' => '1',
+  'id' => '8',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->update[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [8]Array to string conversion[D:\myblog\thinkphp\library\think\Loader.php:439]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:40:26+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/administrator/8
+[ log ] myblog.io/admin/administrator/8 [运行时间：0.054560s][吞吐率：18.33req/s] [内存消耗：2,516.16kb] [文件加载：57]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Administrator',
+    2 => 'read',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+  'id' => '8',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->read[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\administrator\read.html [ array (
+  0 => 'item',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001494s ] mysql:dbname=sblog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.006070s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000492s ]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:40:27+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/administrator/update/8
+[ log ] myblog.io/admin/administrator/update/8 [运行时间：0.052319s][吞吐率：19.11req/s] [内存消耗：2,437.31kb] [文件加载：59]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Administrator',
+    2 => 'update',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'content-length' => '57080',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://myblog.io',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryr3ronZWqMxZ5m3vb',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator/8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'wuqian',
+  'nickname' => '吴倩',
+  'pwd' => '21232f297a57a5a743894a0e4a801fc3',
+  'status' => '1',
+  'id' => '8',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->update[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [8]Array to string conversion[D:\myblog\thinkphp\library\think\Loader.php:439]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:40:34+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/administrator/8
+[ log ] myblog.io/admin/administrator/8 [运行时间：0.082390s][吞吐率：12.14req/s] [内存消耗：2,516.16kb] [文件加载：57]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Administrator',
+    2 => 'read',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+  'id' => '8',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->read[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\administrator\read.html [ array (
+  0 => 'item',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010873s ] mysql:dbname=sblog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.005849s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000429s ]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:40:37+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/administrator
+[ log ] myblog.io/admin/administrator [运行时间：0.064144s][吞吐率：15.59req/s] [内存消耗：2,635.30kb] [文件加载：60]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'administrator',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator/8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->index[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\administrator\index.html [ array (
+  0 => 'data',
+  1 => 'list',
+  2 => 'info',
+  3 => 'item',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001151s ] mysql:dbname=sblog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.006017s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` WHERE  `status` >= 0 LIMIT 1 [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` >= 0 ORDER BY `id`  ASC LIMIT 0,15 [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` >= 0 [ RunTime:0.000415s ]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:40:40+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/administrator/8
+[ log ] myblog.io/admin/administrator/8 [运行时间：0.070132s][吞吐率：14.26req/s] [内存消耗：2,516.16kb] [文件加载：57]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Administrator',
+    2 => 'read',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+  'id' => '8',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->read[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\administrator\read.html [ array (
+  0 => 'item',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011433s ] mysql:dbname=sblog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.006106s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000438s ]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:40:45+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/administrator/update/8
+[ log ] myblog.io/admin/administrator/update/8 [运行时间：0.049144s][吞吐率：20.35req/s] [内存消耗：2,437.31kb] [文件加载：59]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Administrator',
+    2 => 'update',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'content-length' => '57080',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://myblog.io',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary8g2pqSh79tHZAW3s',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator/8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'wuqian',
+  'nickname' => '吴倩',
+  'pwd' => '21232f297a57a5a743894a0e4a801fc3',
+  'status' => '1',
+  'id' => '8',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->update[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [8]Array to string conversion[D:\myblog\thinkphp\library\think\Loader.php:439]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:41:17+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/administrator/8
+[ log ] myblog.io/admin/administrator/8 [运行时间：0.082402s][吞吐率：12.14req/s] [内存消耗：2,519.25kb] [文件加载：57]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Administrator',
+    2 => 'read',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+  'id' => '8',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->read[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\administrator\read.html [ array (
+  0 => 'item',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010480s ] mysql:dbname=sblog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.006313s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000450s ]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:41:22+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/administrator/update/8
+[ log ] myblog.io/admin/administrator/update/8 [运行时间：0.231162s][吞吐率：4.33req/s] [内存消耗：2,601.54kb] [文件加载：62]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Administrator',
+    2 => 'update',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'content-length' => '57080',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://myblog.io',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary6N91UgAmkeYmBBo0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator/8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'wuqian',
+  'nickname' => '吴倩',
+  'pwd' => '21232f297a57a5a743894a0e4a801fc3',
+  'status' => '1',
+  'id' => '8',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->update[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\myblog\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011057s ] mysql:dbname=sblog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.006163s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `username`='wuqian',`nickname`='吴倩',`pwd`='c3284d0f94606de1fd2af172aba15bf3',`status`=1,`avatar`='59342a228bdd9_thumb.png'  WHERE  `id` = 8 [ RunTime:0.011294s ]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:41:24+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/administrator
+[ log ] myblog.io/admin/administrator [运行时间：0.060950s][吞吐率：16.41req/s] [内存消耗：2,638.40kb] [文件加载：60]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'administrator',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator/update/8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->index[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\administrator\index.html [ array (
+  0 => 'data',
+  1 => 'list',
+  2 => 'info',
+  3 => 'item',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001183s ] mysql:dbname=sblog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.006172s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` WHERE  `status` >= 0 LIMIT 1 [ RunTime:0.000324s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` >= 0 ORDER BY `id`  ASC LIMIT 0,15 [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` >= 0 [ RunTime:0.000394s ]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:41:26+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/administrator/8
+[ log ] myblog.io/admin/administrator/8 [运行时间：0.059552s][吞吐率：16.79req/s] [内存消耗：2,519.25kb] [文件加载：57]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Administrator',
+    2 => 'read',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+  'id' => '8',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->read[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\administrator\read.html [ array (
+  0 => 'item',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001355s ] mysql:dbname=sblog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.005946s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000434s ]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:54:30+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/administrator
+[ log ] myblog.io/admin/administrator [运行时间：0.073071s][吞吐率：13.69req/s] [内存消耗：2,635.29kb] [文件加载：60]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'administrator',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator/update/8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->index[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\administrator\index.html [ array (
+  0 => 'data',
+  1 => 'list',
+  2 => 'info',
+  3 => 'item',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011345s ] mysql:dbname=sblog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.006783s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` WHERE  `status` >= 0 LIMIT 1 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` >= 0 ORDER BY `id`  ASC LIMIT 0,15 [ RunTime:0.000400s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` >= 0 [ RunTime:0.000367s ]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:54:32+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/administrator/28
+[ log ] myblog.io/admin/administrator/28 [运行时间：0.060237s][吞吐率：16.60req/s] [内存消耗：2,516.15kb] [文件加载：57]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Administrator',
+    2 => 'read',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+  'id' => '28',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->read[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\administrator\read.html [ array (
+  0 => 'item',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011088s ] mysql:dbname=sblog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.006795s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 28 LIMIT 1 [ RunTime:0.000446s ]
+
+---------------------------------------------------------------
+[ 2017-06-04T23:54:38+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/administrator/update/28
+[ log ] myblog.io/admin/administrator/update/28 [运行时间：0.076051s][吞吐率：13.15req/s] [内存消耗：2,507.30kb] [文件加载：60]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Administrator',
+    2 => 'update',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'content-length' => '57076',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://myblog.io',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryqNVDBHG00EnW8L8C',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/administrator/28',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=5s7f1stgcqt8o7v2p7qsrgklf7',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'vvvv',
+  'nickname' => 'vvvv',
+  'pwd' => '386c57017f4658ca5215569643f0189d',
+  'status' => '1',
+  'id' => '28',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\AdministratorController->update[ D:\myblog\application\admin\controller\AdministratorController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [8]Use of undefined constant THUMB_CENTER - assumed 'THUMB_CENTER'[D:\myblog\application\admin\controller\AdministratorController.php:109]
+
+---------------------------------------------------------------

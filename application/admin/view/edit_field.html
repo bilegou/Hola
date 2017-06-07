@@ -23,12 +23,11 @@
                {if isset($field['id']) AND $field['id']}id="{$field['id']}"{/if}
         {if isset($field['disabled']) AND $field['disabled']}disabled=$field['disabled']{/if}
         class="form-control"
-        name="{$key}" value="{if isset($item[$key])}{$item[$key]}{/if}">
-
+        name="{$key}" value="">
         {if isset($field['create'])}
         {$field['create']}
         {else/}
-        {$field['notes']}
+        <p class="help-block">{$field['notes']}</p>
         {/if}
     </div>
     {/case}
@@ -43,7 +42,6 @@
     </div>
     {if isset($item[$key]) AND $item[$key]!=""}
     <a href="__IMAGES__/{$item[$key]}" target="_blank"><img src="__IMAGES__/{$item[$key]}" class="img-responsive img-thumbnail"></a>
-    <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete</a>
     {/if}
     {/case}
 
@@ -61,6 +59,18 @@
             {/foreach}
         </div>
         </div>
+    {/case}
+
+    {case value="textarea"}
+    <div class="form-group">
+        {if isset($field['label'])}<label>{$field['label']}</label>{/if}
+        <div class="">
+            <input type="{$field['type']}" {if isset($field['disable']) AND $field['disable']}disable="disable"{/if}
+            value="{if isset($item[$key])}{$item[$key]}{/if}"
+            name="{$key}">
+            {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
+        </div>
+    </div>
     {/case}
 
         {/switch}

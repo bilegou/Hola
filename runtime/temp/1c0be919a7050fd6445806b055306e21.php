@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:59:"D:\myblog\public/../application/admin\view\index\index.html";i:1496146654;s:54:"D:\myblog\public/../application/admin\view\layout.html";i:1495507201;s:54:"D:\myblog\public/../application/admin\view\header.html";i:1496314293;s:52:"D:\myblog\public/../application/admin\view\left.html";i:1496749847;s:54:"D:\myblog\public/../application/admin\view\footer.html";i:1496388250;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:63:"D:\myblog\public/../application/admin\view\articles\create.html";i:1496727703;s:54:"D:\myblog\public/../application/admin\view\layout.html";i:1495507201;s:54:"D:\myblog\public/../application/admin\view\header.html";i:1496314293;s:52:"D:\myblog\public/../application/admin\view\left.html";i:1496749847;s:54:"D:\myblog\public/../application/admin\view\footer.html";i:1496388250;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,44 +50,16 @@
 </div>
 
 </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
 <body>
-<div class="control-label">
-    <h3>Admin Panel<div class="glyphicon glyphicon-home"></div> </h3>
-    <div class="nav_controller">
-        <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Library</a></li>
-            <li class="active">Data</li>
-        </ol>
-    </div>
 
-    <div class="panel_choice">
-        <a href="/admin/administrator"><div class="admin_role">
-            <div class="center_block">
-            <div class="glyphicon glyphicon-user" style="font-size: 30px;">32</div>
-            <div class="man_num">Number</div>
-                </div>
-        </div></a>
-
-        <a href="#"> <div class="admin_role">
-            <div class="center_block">
-            <div class="glyphicon glyphicon-book" style="font-size: 30px;">12</div>
-            <div class="art_num">Articles</div>
-                </div>
-        </div></a>
-
-        <a href="#"> <div class="admin_role">
-            <div class="center_block">
-            <div class="glyphicon glyphicon-calendar" style="font-size: 30px;">32</div>
-            <div class="man_num">Calendar</div>
-                </div>
-        </div></a>
-
-        </div>
-    </div>
-</div>
 </body>
-
+</html>
 
 <body>
 　<div class="footer_content">
