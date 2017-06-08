@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:59:"D:\myblog\public/../application/admin\view\index\index.html";i:1496146654;s:54:"D:\myblog\public/../application/admin\view\layout.html";i:1495507201;s:54:"D:\myblog\public/../application/admin\view\header.html";i:1496314293;s:52:"D:\myblog\public/../application/admin\view\left.html";i:1496749847;s:54:"D:\myblog\public/../application/admin\view\footer.html";i:1496388250;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:59:"D:\myblog\public/../application/admin\view\index\index.html";i:1496911180;s:54:"D:\myblog\public/../application/admin\view\layout.html";i:1495507201;s:54:"D:\myblog\public/../application/admin\view\header.html";i:1496314293;s:52:"D:\myblog\public/../application/admin\view\left.html";i:1496911059;s:54:"D:\myblog\public/../application/admin\view\footer.html";i:1496907917;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,14 +29,14 @@
 <body>
 <div class="global_left">
     <div class="title_left">
-        <a href="/admin/administrator" style="text-decoration: none"><div style="color:#00CCCC; font-size: 22px; text-align: center;line-height: 50px;border-bottom: 1px solid #EEEEEE;">Hola Blog <span style="font-size: 14px;color:#DDDDDD">&nbsp by &Sen</span></div></a>
+        <a href="/admin" style="text-decoration: none"><div style="color:#00CCCC; font-size: 22px; text-align: center;line-height: 50px;border-bottom: 1px solid #EEEEEE;">Hola Blog <span style="font-size: 14px;color:#DDDDDD">&nbsp by &Sen</span></div></a>
     </div>
     <div class="nav_control">
         <div class="administer">
             <a href="#"><div class="adm_title" style="font-size: 18px">Administrator&nbsp&nbsp<div class="glyphicon glyphicon-chevron-down" id="plus_icon"></div></div></a>
             <ul id="admin">
-                <li><a href="#">管理员列表</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#userCreate">新增管理员</a></li>
+                <li><a href="/admin/administrator">管理员列表</a></li>
+                <li><a href="/admin/administrator/create" data-toggle="modal" data-target="#userCreate">新增管理员</a></li>
             </ul>
         </div>
         <div class="articles">
@@ -69,7 +69,7 @@
                 </div>
         </div></a>
 
-        <a href="#"> <div class="admin_role">
+        <a href="/admin/articles"> <div class="admin_role">
             <div class="center_block">
             <div class="glyphicon glyphicon-book" style="font-size: 30px;">12</div>
             <div class="art_num">Articles</div>
@@ -108,7 +108,6 @@
             success:function(data){
                     $('#reload'+data.id).remove();
             }
-
         });
     }
 
@@ -122,6 +121,18 @@
         })
     }
 
+    function deleteArticle(id){
+        $.ajax({
+            type:"POST",
+            url:"<?php echo url('admin/articles/delete'); ?>",
+            data:{
+                id:id,
+            },
+            success:function(data){
+                $('#reload'+data.id).remove();
+            }
+        });
+    }
 </script>
 
 <script>

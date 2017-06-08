@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!--编辑用户资料-->
+<div class="control-label">
+    <h3>Admin list
+        <div class="glyphicon glyphicon-list"></div>
+    </h3>
+    <div class="nav_controller">
+        <ol class="breadcrumb">
+            <li><a href="{:url('/admin/administrator')}">Home</a></li>
+            <li class="active">Data</li>
+        </ol>
+    </div>
 
-</body>
-</html>
+    <form  role="form" enctype="multipart/form-data" action="{:url($data.module_url.'/update/')}{$item->id}" method="post">
+        <div class="articles_position">
+            {include file="edit_field" /}
+        </div>
+        <div class="button_position">
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                <button type="submit" class="btn btn-info" >提交</button>
+            </div>
+        </div>
+    </form>
+
+</div>.
+<script type="application/javascript">
+</script>

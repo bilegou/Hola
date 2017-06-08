@@ -21,10 +21,8 @@ class AdministratorController extends AdminAuth
     {
         $user = new User();
         $list = $user->where('status', '>=', 0)->order('id', 'ASC')->paginate();
-        $info = $user->where('status','>=',0)->select();
         $this->assign('data', $this->data);
         $this->assign('list', $list);
-        $this->assign('info',$info);
 
         $this->data['edit_field'] = [
             'username' => array('type' => 'text', 'label' => '用户名'),
@@ -48,7 +46,7 @@ class AdministratorController extends AdminAuth
         $data = input('post.');
         $user = new User();
         $rule = [
-            'username' => 'require|min:5',//unique属性需要表名
+            'username|用户名' => 'require|min:5|unique:user',//unique属性需要表名
             'pwd'=>'require|min:5',
             'nickname'=>'require|min:2',
         ];

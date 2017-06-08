@@ -47,7 +47,7 @@
 
     {case value="radio"}
     <div class="form-group">
-            {if isset($field['label'])}<label>{$field['label']}</label>{/if}
+        {if isset($field['label'])}<label>{$field['label']}</label>{/if}
         <div class="checkbox">
             {foreach $field['default'] as $ov=>$ol}
             <label>
@@ -58,21 +58,34 @@
             </label>
             {/foreach}
         </div>
-        </div>
+    </div>
     {/case}
 
-    {case value="textarea"}
+{case value="textarea"}
     <div class="form-group">
         {if isset($field['label'])}<label>{$field['label']}</label>{/if}
         <div class="">
-            <input type="{$field['type']}" {if isset($field['disable']) AND $field['disable']}disable="disable"{/if}
+            <textarea type="{$field['type']}" {if isset($field['disable']) AND $field['disable']}disable="disable"{/if}
             value="{if isset($item[$key])}{$item[$key]}{/if}"
-            name="{$key}">
-            {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
-        </div>
+            name="{$key}" rows="20" cols="100" style="resize: none;" >{if isset($item[$key]) AND $item[$key]}{$item[$key]}{/if}</textarea></div>
+    </div>
+    {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
+{/case}
+
+    {case value="select"}
+    <div class="form-group">
+        {if isset($field['label']) AND $field['label']}<label>{$field['label']}</label>{/if}
+        <select name="{$key}" type="{$field['type']}" {if isset($field['id']) AND $field['id']}id="{$field['id']}"{/if}
+        {if isset($field['disable']) AND $field['disable']}disable="disable"{/if} style="max-width: 300px;" class='form-control'>
+
+        {foreach $field['default'] as $vo => $ol}
+        <option value="{$vo}" {if isset($item[$key]) AND $item[$key]==$ol} selected="selected"{/if}>{$ol}</option>
+        {/foreach}
+        </select>
+        {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
     </div>
     {/case}
 
-        {/switch}
-        {/foreach}
-    </div>
+{/switch}
+{/foreach}
+</div>

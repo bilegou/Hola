@@ -10,13 +10,15 @@ class ArticlesController extends AdminAuth{
     private $data = [
         'module_url' => '/admin/articles/',
         'upload_path'=>UPLOAD_PATH,
+
     ];
 
 
     public function index(){
         $article = new Article();
-        $data =  $article->where('id','>=',0)->select();
-        $this->assign('data',$data);
+        $list = $article->where('status','>=',0)->order('id','ASC')->paginate();
+        $this->assign('list',$list);
+        $this->assign('data',$this->data);
         return $this->fetch();
     }
 
@@ -25,44 +27,53 @@ class ArticlesController extends AdminAuth{
         $admin =  $user->where('status',1)->column('nickname','id');
 
         $this->data['edit_field'] = [
-            'articles_title'=>['type'=>'text','label'=>'文章标题'],
-            'articles_author'=>['type'=>'select','label'=>'作者','default'=>$admin],
-            'article_content'=>['type'=>'textarea','label'=>'文章内容'],
-            'status'=>['type'=>'radio','label'=>'发布状态'],
+            'title'=>['type'=>'text','label'=>'文章标题'],
+            'content'=>['type'=>'textarea','label'=>'文章内容'],
+            'author'=>['type'=>'select','label'=>'作者','default'=>$admin],
+            'image'=>['type'=>'file','label'=>'图片'],
+            'status'=>['type'=>'radio','label'=>'发布状态','default'=>[-1 => '删除', 0 => '禁用', 1 => '正常', 2 => '待审核']],
         ];
-        $this->assign('data',$this->data);
+        $item['status'] = '正常';
+        $this->assign(['data'=>$this->data,'item'=>$item]);
         return $this->fetch();
     }
 
     public function add(){
         $articles = new Article();
         $data = input('post.');
-        $data['picture'] = $this->upload();
+        dump($data);
         $rule = [
-            'title'=>'requier',
-            'contents'=>'requier',
-            'author'=>'requier',
+            'title' => 'require|min:5',
+            'content' => 'require',
+            'author' => 'require',
         ];
         $validate = new Validate($rule);
         $result = $validate->check($data);
-        if(!$result){
+        if (!$result) {
             $validate->getError();
         }
-        if($articles->save($data)){
-            return $this->success('新增文章成功','/admin/articles');
-        }else{
+
+        $data['image'] = $this->upload();
+        if(!$data['image']){
+            unset($data['image']);
+        }
+        if ($articles->save($data)) {
+            return $this->success('新增文章成功', '/admin/articles');
+        } else {
             return $this->error('文章添加失败');
         }
     }
-    public function read($id=''){
+
+    public function read($id){
         $user = new User();
         $articles = new Article();
         $admin =  $user->where('status',1)->column('nickname','id');
 
         $this->data['edit_field'] = [
-            'articles_title'=>['type'=>'text','label'=>'文章标题'],
-            'articles_author'=>['type'=>'select','label'=>'作者','default'=>$admin],
-            'article_content'=>['type'=>'textarea','label'=>'文章内容'],
+            'title'=>['type'=>'text','label'=>'文章标题'],
+            'author'=>['type'=>'select','label'=>'作者','default'=>$admin],
+            'content'=>['type'=>'textarea','label'=>'文章内容'],
+            'image'=>['type'=>'file','label'=>'图片'],
             'status'=>['type'=>'radio','label'=>'发布状态','default'=>[-1 => '删除', 0 => '禁用', 1 => '正常', 2 => '待审核']],
         ];
         $item = $articles->get($id);
@@ -77,13 +88,22 @@ class ArticlesController extends AdminAuth{
         $data = input('post.');
         $data['id'] = $id;
 
+        $rule = [
+            'title'=>'require',
+        ];
+
+        $validate = new Validate($rule);
+        $result = $validate->check($data);
+        if(!$result){
+            $validate->getError();
+        }
         $data['image'] = $this->upload();
         if(!$data['image']){
             unset($data['image']);
         }
 
         if($articles->update($data)){
-         return  $this->success('修改文章内容成功');
+            return  $this->success('修改文章内容成功','/admin/articles');
         }else{
             return $this->error('修改文章失败');
         }
@@ -115,10 +135,10 @@ class ArticlesController extends AdminAuth{
     }
 
     public function delete($id){
-        $result =  Article::get($id);
-        $data['id']=$id;
-        if($result){
-            $this->delete($id);
+        $article =  Article::get($id);
+        $data['id'] = $id;
+        if($article){
+            $article->delete($id);
         }
         return $data;
     }

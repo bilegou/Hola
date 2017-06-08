@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:67:"D:\myblog\public/../application/admin\view\administrator\index.html";i:1496660600;s:54:"D:\myblog\public/../application/admin\view\layout.html";i:1495507201;s:54:"D:\myblog\public/../application/admin\view\header.html";i:1496314293;s:52:"D:\myblog\public/../application/admin\view\left.html";i:1496911059;s:58:"D:\myblog\public/../application/admin\view\edit_field.html";i:1496916975;s:54:"D:\myblog\public/../application/admin\view\footer.html";i:1496907917;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:61:"D:\myblog\public/../application/admin\view\articles\read.html";i:1496918148;s:54:"D:\myblog\public/../application/admin\view\layout.html";i:1495507201;s:54:"D:\myblog\public/../application/admin\view\header.html";i:1496314293;s:52:"D:\myblog\public/../application/admin\view\left.html";i:1496911059;s:58:"D:\myblog\public/../application/admin\view\edit_field.html";i:1496916975;s:54:"D:\myblog\public/../application/admin\view\footer.html";i:1496907917;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,67 +50,21 @@
 </div>
 
 </body>
-<body>
+<!--编辑用户资料-->
 <div class="control-label">
     <h3>Admin list
         <div class="glyphicon glyphicon-list"></div>
-        <div class="add_btn"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#userCreate">
-          <div class="glyphicon glyphicon-plus">ADD</div>
-        </button></div>
     </h3>
     <div class="nav_controller">
         <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Library</a></li>
+            <li><a href="<?php echo url('/admin/administrator'); ?>">Home</a></li>
             <li class="active">Data</li>
         </ol>
     </div>
-    <div class="admin_list">
-    <table class="table">
-        <tr>
-            <td>ID</td>
-            <td>昵称</td>
-            <td>用户名</td>
-            <td>密码</td>
-            <td>注册时间</td>
-            <td>最后登录IP</td>
-            <td>最后登录时间</td>
-            <td style="text-align: center">操作</td>
-        </tr>
 
-        <tbody>
-        <?php if(($list)): if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$user): $mod = ($i % 2 );++$i;?>
-        <tr id="reload<?php echo $user['id']; ?>">
-            <td><?php echo $user['id']; ?></td>
-            <td><?php echo $user['nickname']; ?></td>
-            <td><?php echo $user['username']; ?></td>
-            <td><?php echo $user['pwd']; ?></td>
-            <td><?php echo $user['create_time']; ?></td>
-            <td><?php echo $user['last_login_ip']; ?></td>
-            <td><?php echo $user['last_login_i_time']; ?></td>
-            <td style="text-align: center">
-                <div class="btn btn-primary" id="info">信息</div>
-                <a class="btn btn-info" id="edit" href="<?php echo url($data['module_url'].$user->id); ?>">编辑</a>
-                <a class="btn btn-danger" href="javascript:;"  onclick="if(confirm('确定要删除该管理员账号吗')){ deleteData(<?php echo $user->id; ?>)}">删除</a>
-            </td>
-        </tr>
-        <?php endforeach; endif; else: echo "" ;endif; endif; ?>
-        </tbody>
-    </table>
-    </div>
-    <div class="admin_pagination" style=" float: right" >
-    <div class="Page navigation"><?php echo $list->render(); ?></div>
-    </div>
-    <!--新建用户-->
-    <div class="modal fade bs-example-modal-lg" id="userCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">填写用户信息</h4>
-                </div>
-                <form role="form" enctype="multipart/form-data" action="<?php echo url($data['module_url']).'add'; ?>" method="post">
-                    
+    <form  role="form" enctype="multipart/form-data" action="<?php echo url($data['module_url'].'/update/'); ?><?php echo $item->id; ?>" method="post">
+        <div class="articles_position">
+            
 <div class="free_loop">
     <?php if(is_array($data['edit_field']) || $data['edit_field'] instanceof \think\Collection || $data['edit_field'] instanceof \think\Paginator): if( count($data['edit_field'])==0 ) : echo "" ;else: foreach($data['edit_field'] as $key=>$field): switch($name=$field['type']): case "text": ?>
     <div class="form-group">
@@ -178,17 +132,18 @@
     </div>
     <?php break; endswitch; endforeach; endif; else: echo "" ;endif; ?>
 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
-                    <button type="submit" class="btn btn-info" >提交</button>
-                </div>
-                </form>
+        </div>
+        <div class="button_position">
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                <button type="submit" class="btn btn-info" >提交</button>
             </div>
         </div>
-    </div>
-</div>
+    </form>
 
-</body>
+</div>.
+<script type="application/javascript">
+</script>
 
 <body>
 　<div class="footer_content">
