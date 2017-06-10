@@ -2794,3 +2794,107 @@
 [ sql ] [ SQL ] SELECT * FROM `article` WHERE  `status` >= 0 ORDER BY `id`  ASC LIMIT 0,15 [ RunTime:0.000354s ]
 
 ---------------------------------------------------------------
+[ 2017-06-10T13:46:27+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] myblog.io/ [运行时间：0.816139s][吞吐率：1.23req/s] [内存消耗：1,284.66kb] [文件加载：38]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=d7lv57g4huehar035virnofvj5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\IndexController->index[ D:\myblog\application\index\controller\IndexController.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-06-10T13:50:06+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ log ] myblog.io/admin [运行时间：0.339781s][吞吐率：2.94req/s] [内存消耗：1,581.40kb] [文件加载：48]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin/articles',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=d7lv57g4huehar035virnofvj5; pgv_pvi=9541953536; pgv_si=s2335884288',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ D:\myblog\application\admin\controller\IndexController.php ]
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-06-10T13:50:07+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ log ] myblog.io/admin [运行时间：0.030426s][吞吐率：32.87req/s] [内存消耗：1,581.39kb] [文件加载：48]
+[ info ] [ LANG ] D:\myblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'myblog.io',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://myblog.io/admin',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=d7lv57g4huehar035virnofvj5; pgv_pvi=9541953536; pgv_si=s2335884288',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ D:\myblog\application\admin\controller\IndexController.php ]
+[ info ] [ VIEW ] D:\myblog\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
