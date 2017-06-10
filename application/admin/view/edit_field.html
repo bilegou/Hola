@@ -40,6 +40,7 @@
             <span id="scan" style="position: relative" class="btn btn-primary input-group-addon">浏览<input id="path" name="{$key}" style="width: 60px;height:40px; position: absolute;top:-6px;left: -4px;opacity: 0; filter:alpha(opacity=0)" class="form-control" type="{$field['type']}"></span>
         </div>
     </div>
+
     {if isset($item[$key]) AND $item[$key]!=""}
     <a href="__IMAGES__/{$item[$key]}" target="_blank"><img src="__IMAGES__/{$item[$key]}" class="img-responsive img-thumbnail"></a>
     {/if}

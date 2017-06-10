@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:63:"D:\myblog\public/../application/admin\view\articles\create.html";i:1496906104;s:54:"D:\myblog\public/../application/admin\view\layout.html";i:1495507201;s:54:"D:\myblog\public/../application/admin\view\header.html";i:1496314293;s:52:"D:\myblog\public/../application/admin\view\left.html";i:1496911059;s:58:"D:\myblog\public/../application/admin\view\edit_field.html";i:1496916975;s:54:"D:\myblog\public/../application/admin\view\footer.html";i:1496907917;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:63:"D:\myblog\public/../application/admin\view\articles\create.html";i:1496906104;s:54:"D:\myblog\public/../application/admin\view\layout.html";i:1495507201;s:54:"D:\myblog\public/../application/admin\view\header.html";i:1496314293;s:52:"D:\myblog\public/../application/admin\view\left.html";i:1496911059;s:58:"D:\myblog\public/../application/admin\view\edit_field.html";i:1497062518;s:54:"D:\myblog\public/../application/admin\view\footer.html";i:1496907917;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,7 +95,7 @@
             <span id="scan" style="position: relative" class="btn btn-primary input-group-addon">浏览<input id="path" name="<?php echo $key; ?>" style="width: 60px;height:40px; position: absolute;top:-6px;left: -4px;opacity: 0; filter:alpha(opacity=0)" class="form-control" type="<?php echo $field['type']; ?>"></span>
         </div>
     </div>
-    <?php if(isset($item[$key]) AND $item[$key]!=""): ?>
+    <?php echo $item[$key]; if(isset($item[$key]) AND $item[$key]!=""): ?>
     <a href="__IMAGES__/<?php echo $item[$key]; ?>" target="_blank"><img src="__IMAGES__/<?php echo $item[$key]; ?>" class="img-responsive img-thumbnail"></a>
     <?php endif; break; case "radio": ?>
     <div class="form-group">

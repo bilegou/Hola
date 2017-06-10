@@ -105,7 +105,12 @@ class AdministratorController extends AdminAuth
         if(!$data['avatar']){
             unset($data['avatar']);
         }
-        $data['pwd'] = md5($data['pwd']);
+        if(!$data['pwd']==''){
+            $data['pwd'] = md5($data['pwd']);
+        }else{
+            unset($data['pwd']);
+        }
+
         $data['id'] = $id;
         if($user->update($data)){
             return $this->success('修改成功','/admin/administrator');

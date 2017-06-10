@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:66:"D:\myblog\public/../application/admin\view\administrator\read.html";i:1496897564;s:54:"D:\myblog\public/../application/admin\view\layout.html";i:1495507201;s:54:"D:\myblog\public/../application/admin\view\header.html";i:1496314293;s:52:"D:\myblog\public/../application/admin\view\left.html";i:1496908884;s:58:"D:\myblog\public/../application/admin\view\edit_field.html";i:1496905701;s:54:"D:\myblog\public/../application/admin\view\footer.html";i:1496907917;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:66:"D:\myblog\public/../application/admin\view\administrator\read.html";i:1496897564;s:54:"D:\myblog\public/../application/admin\view\layout.html";i:1495507201;s:54:"D:\myblog\public/../application/admin\view\header.html";i:1496314293;s:52:"D:\myblog\public/../application/admin\view\left.html";i:1496911059;s:58:"D:\myblog\public/../application/admin\view\edit_field.html";i:1497063459;s:54:"D:\myblog\public/../application/admin\view\footer.html";i:1496907917;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +29,7 @@
 <body>
 <div class="global_left">
     <div class="title_left">
-        <a href="/admin/administrator" style="text-decoration: none"><div style="color:#00CCCC; font-size: 22px; text-align: center;line-height: 50px;border-bottom: 1px solid #EEEEEE;">Hola Blog <span style="font-size: 14px;color:#DDDDDD">&nbsp by &Sen</span></div></a>
+        <a href="/admin" style="text-decoration: none"><div style="color:#00CCCC; font-size: 22px; text-align: center;line-height: 50px;border-bottom: 1px solid #EEEEEE;">Hola Blog <span style="font-size: 14px;color:#DDDDDD">&nbsp by &Sen</span></div></a>
     </div>
     <div class="nav_control">
         <div class="administer">
@@ -93,6 +93,7 @@
             <span id="scan" style="position: relative" class="btn btn-primary input-group-addon">浏览<input id="path" name="<?php echo $key; ?>" style="width: 60px;height:40px; position: absolute;top:-6px;left: -4px;opacity: 0; filter:alpha(opacity=0)" class="form-control" type="<?php echo $field['type']; ?>"></span>
         </div>
     </div>
+
     <?php if(isset($item[$key]) AND $item[$key]!=""): ?>
     <a href="__IMAGES__/<?php echo $item[$key]; ?>" target="_blank"><img src="__IMAGES__/<?php echo $item[$key]; ?>" class="img-responsive img-thumbnail"></a>
     <?php endif; break; case "radio": ?>
@@ -115,12 +116,13 @@
         <div class="">
             <textarea type="<?php echo $field['type']; ?>" <?php if(isset($field['disable']) AND $field['disable']): ?>disable="disable"<?php endif; ?>
             value="<?php if(isset($item[$key])): ?><?php echo $item[$key]; endif; ?>"
-            name="<?php echo $key; ?>" rows="20" cols="100" style="resize: none;"></textarea></div>
+            name="<?php echo $key; ?>" rows="20" cols="100" style="resize: none;" ><?php if(isset($item[$key]) AND $item[$key]): ?><?php echo $item[$key]; endif; ?></textarea></div>
     </div>
     <?php if(isset($field['notes']) AND $field['notes']): ?><p class="help-block"><?php echo $field['notes']; ?></p><?php endif; break; case "select": ?>
     <div class="form-group">
         <?php if(isset($field['label']) AND $field['label']): ?><label><?php echo $field['label']; ?></label><?php endif; ?>
-        <select name="<?php echo $key; ?>" type="<?php echo $field['type']; ?>" <?php if(isset($field['disable']) AND $field['disable']): ?>disable="disable"<?php endif; ?> style="max-width: 300px;" class='form-control'>
+        <select name="<?php echo $key; ?>" type="<?php echo $field['type']; ?>" <?php if(isset($field['id']) AND $field['id']): ?>id="<?php echo $field['id']; ?>"<?php endif; if(isset($field['disable']) AND $field['disable']): ?>disable="disable"<?php endif; ?> style="max-width: 300px;" class='form-control'>
+
         <?php foreach($field['default'] as $vo => $ol): ?>
         <option value="<?php echo $vo; ?>" <?php if(isset($item[$key]) AND $item[$key]==$ol): ?> selected="selected"<?php endif; ?>><?php echo $ol; ?></option>
         <?php endforeach; ?>

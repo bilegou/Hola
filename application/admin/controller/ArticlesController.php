@@ -41,7 +41,7 @@ class ArticlesController extends AdminAuth{
     public function add(){
         $articles = new Article();
         $data = input('post.');
-        dump($data);
+
         $rule = [
             'title' => 'require|min:5',
             'content' => 'require',
@@ -50,7 +50,7 @@ class ArticlesController extends AdminAuth{
         $validate = new Validate($rule);
         $result = $validate->check($data);
         if (!$result) {
-            $validate->getError();
+           return $validate->getError();
         }
 
         $data['image'] = $this->upload();
@@ -90,12 +90,14 @@ class ArticlesController extends AdminAuth{
 
         $rule = [
             'title'=>'require',
+            'content' => 'require',
+            'author' => 'require',
         ];
 
         $validate = new Validate($rule);
         $result = $validate->check($data);
         if(!$result){
-            $validate->getError();
+           return $validate->getError();
         }
         $data['image'] = $this->upload();
         if(!$data['image']){
