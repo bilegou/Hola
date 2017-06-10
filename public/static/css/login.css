@@ -1,0 +1,23 @@
+
+.login_center{
+    width:20%;
+    Height:220px;
+    margin:15% auto ;
+    background: #FFFFFF;
+    box-shadow:0px 0px 5px #ffffff;
+
+}
+.form-inline{
+    width: 100%;
+}
+.form-group{
+  margin:10% 25%;
+}
+
+.button_left{
+    margin-top: 5%;
+    margin-left: 25%;
+}
+.button_right{
+    margin-left:75%;
+}

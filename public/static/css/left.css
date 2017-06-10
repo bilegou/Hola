@@ -1,0 +1,90 @@
+
+ul li{
+    margin-top:5%;
+}
+#mult_icon{
+    display: none;
+}
+.global_left{
+    float: left;
+    height: 1280px;
+    width: 20%;
+    border-right: 1px solid #EEEEEE;
+    padding-left: 0;
+}
+.title_left {
+    width: 100%;
+    height: 20%;
+    text-decoration: none;
+}
+
+.nav_control{
+    width: 100%;
+    height:200px;
+    margin-top: 25%;
+
+}
+.adm_title {
+    width: 100%;
+    height: 10%;
+    border-bottom: 1px solid  #EEEEEE;
+    color: #00CCCC;
+
+}
+.administer{
+    font-family: 微软雅黑;
+    text-align: center;
+    width:100%;
+}
+.administer a{
+    font-size: 14px;
+}
+.administer a:hover{
+    text-decoration: none;
+}
+
+.administer a:link{
+    text-decoration: none;
+}
+
+.administer a:visited{
+    text-decoration: none;
+}
+
+#admin{
+    list-style-type: none;
+}
+
+.articles{
+    margin-top: 20%;
+    text-align: center;
+    width:100%;
+    font-family: 微软雅黑;
+}
+.art_title{
+    width: 100%;
+    height: 10%;
+    border-bottom: 1px solid  #EEEEEE;
+    color: #00CCCC;
+}
+
+.articles a{
+    font-size: 14px;
+    list-style-type: none;
+}
+
+.articles a:hover{
+    text-decoration: none;
+}
+
+.articles a:link{
+    text-decoration: none;
+}
+
+.articles a:visited{
+    text-decoration: none;
+}
+
+#article{
+    list-style-type: none;
+}

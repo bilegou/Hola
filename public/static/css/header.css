@@ -1,0 +1,35 @@
+.username{
+    display: none;
+}
+.header_control{
+    width: 80%;
+    height:53px;
+    float: right;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.user_info{
+    width: 10%;
+    height:53px;
+    float: right;
+
+}
+.username a li{
+    text-decoration: none;
+    list-style-type: none;
+}
+.username ul li:hover{
+    list-style-type: none;
+    text-decoration: none;
+}
+ ul li:visited{
+    list-style-type: none;
+}
+.articles_position{
+    width:70%;
+    float: left;
+}
+.button_position{
+    width:100%;
+    float: left;
+}

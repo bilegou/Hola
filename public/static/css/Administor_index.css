@@ -1,0 +1,16 @@
+.admin_list{
+    width: 100%;
+    background-color: rgba(245,245,245,.5);
+}
+.page_control{
+    float: right;
+}
+.add_btn{
+
+    height:20px;
+    float: right;
+}
+.free_loop{
+  width: 300px;
+    margin: auto;
+}
